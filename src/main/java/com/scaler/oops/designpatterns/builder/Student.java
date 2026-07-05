@@ -6,18 +6,8 @@ public class Student {
     String batch;
     double psp;
     int gradYear;
-    // ....Lot of attrs.
 
     private Student(Builder builder) {
-//        //Validations start.
-//        if(builder.getAge() < 18) {
-//            throw new RuntimeException("Age must be at least 18");
-//        }
-//        if (builder.getGradYear() > 2025) {
-//            throw new RuntimeException("Grad year must be lesser than 2025");
-//        }
-//        //Validations end.
-
         this.name = builder.getName();
         this.age = builder.getAge();
         this.batch = builder.getBatch();
@@ -36,20 +26,11 @@ public class Student {
         String batch;
         double psp;
         int gradYear;
-        // ....Lot of attrs.
 
-        private Builder() {
-
-        }
+        private Builder() {        }
 
         public Student build() {
-            if (this.age < 18) {
-                throw new RuntimeException("Age must be at least 18");
-            }
-            if (this.gradYear < 2025) {
-                throw new RuntimeException("GradYear must be at least 2025");
-            }
-
+            //validations
             return new Student(this);
         }
 
